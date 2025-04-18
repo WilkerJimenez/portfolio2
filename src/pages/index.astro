@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+const palabras = ["Portafolio", "Wilker Jiménez"];
+
+const divisor = (num: number) => {
+  const characters = palabras[num].split("");
+  let resp = characters.map((c) => {
+    return c;
+  });
+  return resp;
+};
+---
+
+<Layout>
+  <!-- 
+<div class="w-full flex justify-center pt-6">
+  <div class="border-b-2 border-[var(--color-a)] w-full p-6 ">
+    <ul
+      class="w-full text-xl tracking-wide font-robotoCondensed text-[var(--color-p)] flex justify-end gap-x-6"
+    >
+      {
+        list.map((item) => {
+          return <li class="cursor-pointer">{item}</li>;
+        })
+      }
+    </ul>
+  </div>
+</div>
+-->
+  <div class="w-full h-screen px-10 flex items-center">
+    <div
+      class="w-full p-74 bg-[var(--color-a)] flex justify-center items-center rounded shadow"
+    >
+      <div
+        class="w-96 grid grid-row-2 divide-y-2 divide-[var(--color-bg)] place-items-center"
+      >
+        <div class="w-full">
+          <div class="flex justify-center w-full">
+            {
+              divisor(0)?.map((items) => {
+                return (
+                  <span class="hover:-translate-y-1 duration-200 cursor-default text-center font-montserrat uppercase text-5xl font-bold text-[var(--color-p)]">
+                    {items}
+                  </span>
+                );
+              })
+            }
+          </div>
+        </div>
+
+        <div class="w-full">
+          <div class="flex justify-center w-full">
+            {
+              divisor(1)?.map((items) => {
+                return (
+                  <span class="hover:-translate-y-1 duration-200 cursor-default text-center font-montserrat text-3xl font-bold text-[var(--color-p)]">
+                    {items === " " ? "⠀" : items}
+                  </span>
+                );
+              })
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style></style>
+</Layout>

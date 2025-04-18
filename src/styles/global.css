@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    
+    --font-montserrat: "Montserrat", sans-serif;
+    --font-robotoCondensed: "Roboto Condensed", sans-serif;
+    --font-roboto: "Roboto", sans-serif;
+
+
+}
+
+@layer base{
+    :root{
+        --color-bg: #0D0D0D;
+        --color-p: #F5F5F5;
+        --color-s: #1A1A1A;
+        --color-a: #1DB954;
+        --color-op: #333333;
+    }
+}
+
+/*chrome, opera, safari*/
+body::-webkit-scrollbar{
+    display: none;
+}
+
+/*chrome, opera, safari*/
+body::-webkit-scrollbar{
+    display: none;
+}
+
+/*chrome, opera, safari*/
+body::-webkit-scrollbar{
+    display: none;
+}
