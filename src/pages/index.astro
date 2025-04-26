@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Petanimation from "../components/petanimation.jsx";
 const palabras = ["Portafolio", "Wilker Jiménez"];
 
 const divisor = (num: number) => {
@@ -12,57 +13,44 @@ const divisor = (num: number) => {
 ---
 
 <Layout>
-  <!-- 
-<div class="w-full flex justify-center pt-6">
-  <div class="border-b-2 border-[var(--color-a)] w-full p-6 ">
-    <ul
-      class="w-full text-xl tracking-wide font-robotoCondensed text-[var(--color-p)] flex justify-end gap-x-6"
-    >
-      {
-        list.map((item) => {
-          return <li class="cursor-pointer">{item}</li>;
-        })
-      }
-    </ul>
-  </div>
-</div>
--->
-  <div class="w-full h-screen px-10 flex items-center">
-    <div
-      class="w-full p-74 bg-[var(--color-a)] flex justify-center items-center rounded shadow"
-    >
+  <div class="w-full h-screen flex justify-center items-center">
+    <div class="w-screen sm:w-md sm:h-md md:w-2xl md:h-2xl lg:w-4xl lg:h-4xl xl:w-6xl xl:h-6xl 2xl:w-7xl 2xl:h-7xl relative flex justify-center items-center">
+      <div class="absolute inset-0 z-0">
+        <Petanimation client:load client:only="react" />
+      </div>
+      
       <div
-        class="w-96 grid grid-row-2 divide-y-2 divide-[var(--color-bg)] place-items-center"
+        class="w-screen sm:w-md sm:h-md md:w-2xl md:h-2xl lg:w-4xl lg:h-4xl xl:w-6xl xl:h-6xl 2xl:w-7xl 2xl:h-7xl p-74 bg-[var(--color-a)] flex justify-center items-center sm:rounded shadow"
       >
-        <div class="w-full">
-          <div class="flex justify-center w-full">
-            {
-              divisor(0)?.map((items) => {
-                return (
-                  <span class="hover:-translate-y-1 duration-200 cursor-default text-center font-montserrat uppercase text-5xl font-bold text-[var(--color-p)]">
-                    {items}
-                  </span>
-                );
-              })
-            }
-          </div>
-        </div>
+        <div
+          class="grid grid-row-2 divide-y-2 divide-[var(--color-bg)] z-10"
+        >
+            <div class="flex justify-center w-full">
+              {
+                divisor(0)?.map((items) => {
+                  return (
+                    <span class="hover:-translate-y-1 duration-200 cursor-default text-center font-montserrat uppercase text-3xl sm:text-5xl font-bold text-[var(--color-p)]">
+                      {items}
+                    </span>
+                  );
+                })
+              }
+            </div>
 
-        <div class="w-full">
-          <div class="flex justify-center w-full">
-            {
-              divisor(1)?.map((items) => {
-                return (
-                  <span class="hover:-translate-y-1 duration-200 cursor-default text-center font-montserrat text-3xl font-bold text-[var(--color-p)]">
-                    {items === " " ? "⠀" : items}
-                  </span>
-                );
-              })
-            }
+            <div class="flex justify-center w-full">
+              {
+                divisor(1)?.map((items) => {
+                  return (
+                    <span class="hover:-translate-y-1 duration-200 cursor-default text-center font-montserrat text-xl sm:text-3xl font-bold text-[var(--color-p)]">
+                      {items === " " ? "⠀" : items}
+                    </span>
+                  );
+                })
+              }
           </div>
         </div>
       </div>
     </div>
+    <style></style>
   </div>
-  <style></style>
 </Layout>
